@@ -1,99 +1,59 @@
 # Landingpage Factory 🚀
 
+Eine Sammlung von 6 professionellen Landingpage-Themes, die mit modernen Technologien wie **Bootstrap**, **Tailwind CSS** und **Gulp** erstellt wurden. Jedes Theme ist vollständig anpassbar und bietet dynamische Farbpaletten, responsive Design und automatisierte Bildgenerierung.
+
 ## Features
 - 6 Professionelle Themes
 - Automatisierte Bildgenerierung
 - Dynamische Farbpaletten
 - Responsive Design
+- Dark/Light Mode Unterstützung
+- Modernes Build-System mit Gulp
 
-```bash
-landingpage-factory/
-├── themes/
-│   ├── tech-startup/
-│   │   ├── index.html
-│   │   └── theme-config.json
-│   ├── minimalist-portfolio/
-│   │   ├── index.html
-│   │   └── theme-config.json
-│   ├── ecommerce/
-│   │   ├── index.html
-│   │   └── theme-config.json
-│   ├── agency-dark/
-│   │   ├── index.html
-│   │   └── theme-config.json
-│   └── creative-studio/
-│       ├── index.html
-│       └── theme-config.json
-├── assets/
-│   ├── css/
-│   │   └── core.css
-│   └── js/
-│       └── theme-loader.js
-├── .gitignore
-├── package.json
-├── gulpfile.js
-├── README.md
-└── LICENSE
-```
-
-# 6 Theme-Konzepte zum Expandieren:
-
-### Tech Startup (Bootstrap + Gradienten) Dark✅
-
+## Themen
+1. **Tech Startup (Dark & Light)**
    - Hero-Section mit USP
-
    - Feature-Cards mit AOS Animationen
-
    - Pricing-Tabellen
-
    - Kontaktformular mit Floating Labels
 
-### Tech Startup (Bootstrap + Gradienten) Light✅
-
-   - Hero-Section mit USP
-
-   - Feature-Cards mit AOS Animationen
-
-   - Pricing-Tabellen
-
-   - Kontaktformular mit Floating Labels
-
-### Minimal Portfolio (Tailwind CSS)✅
-
+2. **Minimal Portfolio**
    - Fullscreen-Hero mit Typografie
-
    - Projekte-Grid mit Hover-Effekten
-
    - Skill-Bars mit CSS Animation
+   - Dark Mode Toggle
 
-   - Dark Mode Toggle mit Icon Moon/Sun (fontawesome)
-
-### E-Commerce (Tailwind CSS + Custom CSS)✅
-
+3. **E-Commerce**
    - Produkt-Highlight mit Gallery
-
    - Kundenbewertungen
-
    - FAQ-Accordion
-
    - Newsletter-Signup
 
-### Agency Dark (Tailwind Dark Mode)✅
-
+4. **Agency Dark**
    - Dunkles Farbschema
-
    - Team-Grid mit Social Links
-
    - Statistik-Zahlen
-
    - Zitat-Slider
 
-### Creative Studio (Fullscreen Bilder)✅
-
+5. **Creative Studio**
    - Parallax Scrolling Effekte
-
-   - Fullscreen Foto Background (Dunkler Overlay)
-
+   - Fullscreen Foto Background
    - Interaktive Buttons
-
    - Custom Cursor Animation
+
+## Installation
+1. Klone das Repository:
+   ```bash
+   git clone https://github.com/dein-benutzername/landingpage-factory.git
+   ```
+2. Installiere die Abhängigkeiten:
+   ```bash
+   npm install
+   ```
+3. Starte das Build-System:
+   ```bash
+   gulp
+   ```
+## Lizenz
+Dieses Projekt ist unter der MIT-Lizenz lizenziert. Weitere Informationen findest du in der [LICENSE](LICENSE)-Datei.
+
