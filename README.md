@@ -2,6 +2,9 @@
 
 Eine Sammlung von 6 professionellen Landingpage-Themes, die mit modernen Technologien wie **Bootstrap**, **Tailwind CSS** und **Gulp** erstellt wurden. Jedes Theme ist vollständig anpassbar und bietet dynamische Farbpaletten, responsive Design und automatisierte Bildgenerierung.
 
+## Live Demo
+Besuche die [Live Demo](https://akocerke.github.io/landingpage-factory/) auf GitHub Pages, um eine Vorschau der Landingpage-Themes zu sehen.
+
 ## Features
 - 6 Professionelle Themes
 - Automatisierte Bildgenerierung
