@@ -1,0 +1,19 @@
+{
+  "themeName": "Creative Studio",
+  "description": "Ein modernes Theme mit Fullscreen-Bildern, Parallax-Effekten und interaktiven Elementen.",
+  "features": [
+    "Parallax Scrolling Effekte",
+    "Fullscreen Video Background",
+    "Interaktive Buttons",
+    "Zufällige Bilder"
+  ],
+  "styles": {
+    "primaryColor": "#1a1a1a",
+    "secondaryColor": "#ffffff",
+    "fontFamily": "Arial, sans-serif"
+  },
+  "images": {
+    "hero": "https://picsum.photos/1920/1080?random=1",
+    "parallax": "https://picsum.photos/1920/1080?random=2"
+  }
+}

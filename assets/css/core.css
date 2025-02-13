@@ -1,0 +1,25 @@
+/* Grundstile */
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Hover-Effekte */
+.img-hover {
+  transition: transform 0.3s ease;
+}
+
+.img-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Bilder */
+img {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Creative Studio - Fullscreen Bilder mit Parallax-Effekten">
+  <title>Creative Studio</title>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+  <style>
+    /* Standard-Cursor für die gesamte Seite */
+    html {
+      scroll-behavior: smooth;
+      /* Aktiviert Smooth Scroll für die gesamte Seite */
+    }
+
+    body {
+      cursor: default;
+      /* Standard-Cursor beibehalten */
+    }
+
+    /* Ändere den Cursor auf 'pointer' bei interaktiven Elementen */
+    button,
+    a,
+    .btn,
+    .btn:hover {
+      cursor: pointer;
+    }
+
+    /* Optional: Füge einen zusätzlichen Hover-Effekt für interaktive Elemente hinzu */
+    button:hover,
+    .btn:hover,
+    a:hover {
+      background: rgba(0, 0, 0, 0.7);
+      /* Beispiel für Button Hover-Effekt */
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white">
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+
+<!-- Fullscreen Hero Section -->
+<section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('https://picsum.photos/1920/1080?random=1');">
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Dunkler Overlay -->
+  <div class="absolute inset-0 flex flex-col justify-center items-center text-center">
+    <h1 class="text-5xl font-bold mb-4" data-aos="fade-up">Willkommen im Creative Studio</h1>
+    <p class="text-lg mb-6" data-aos="fade-up" data-aos-delay="200">Wir erschaffen visuelle Erlebnisse, die beeindrucken.</p>
+    <a href="#more"
+      class="px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition duration-300 hover:cursor-grow"
+      data-aos="fade-up" data-aos-delay="400">
+      Mehr erfahren
+    </a>
+  </div>
+</section>
+<!-- Parallax Section -->
+<section class="relative w-full h-screen bg-fixed bg-cover bg-center"
+  style="background-image: url('https://picsum.photos/1920/1080?random=2');" id="more">
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  <div class="absolute inset-0 flex flex-col justify-center items-center text-center">
+    <h2 class="text-4xl font-semibold" data-aos="fade-up">Unsere Projekte</h2>
+    <p class="text-lg mt-4" data-aos="fade-up" data-aos-delay="200">Entdecke unsere neuesten Kreationen.</p>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="py-4 text-center bg-gray-900 text-gray-400">
+    <p>&copy; 2025 Creative Studio. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <!-- AOS Animation & Custom Cursor Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Custom Cursor Movement
+    const cursor = document.querySelector(".custom-cursor");
+    document.addEventListener("mousemove", (e) => {
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+    });
+  </script>
+
+</body>
+
+</html>

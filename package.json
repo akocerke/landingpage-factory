@@ -1,0 +1,16 @@
+{
+  "name": "landingpage-factory",
+  "version": "1.0.0",
+  "description": "- 5 Professionelle Themes\r - Automatisierte Bildgenerierung\r - Dynamische Farbpaletten\r - Responsive Design\r - SEO Optimiert",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^5.0.0",
+    "gulp-replace": "^1.1.4"
+  }
+}

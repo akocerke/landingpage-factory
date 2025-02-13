@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern E-Commerce Shop</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Slick CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+
+  <!-- Slick Theme CSS (optional für zusätzliche Styling-Optionen) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+  <!-- jQuery (Slick benötigt jQuery) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Slick JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+
+
+  <!-- Custom CSS -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .product-gallery {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+
+    /* Slider-Anpassungen */
+.review-slider {
+  position: relative;
+  padding: 0 60px; /* Platz für die Pfeile */
+}
+
+.review-slider .slick-prev,
+.review-slider .slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.review-slider .slick-prev {
+  left: 0;
+}
+
+.review-slider .slick-next {
+  right: 0;
+}
+
+.review-slider .slick-prev:hover,
+.review-slider .slick-next:hover {
+  background: white;
+}
+
+.review-slider .slick-dots {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.review-slider .slick-dots li button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  padding: 0;
+}
+
+.review-slider .slick-dots li.slick-active button {
+  background: #059669;
+}
+    /* Zentrieren des Textes und Bildes */
+    .review-card .text-center {
+      text-align: center;
+    }
+    .image-zoom {
+      transition: transform 0.3s ease;
+      cursor: zoom-in;
+    }
+
+    .image-zoom:hover {
+      transform: scale(1.05);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(5, 150, 105, 0.9), rgba(6, 95, 70, 0.9)),
+        url('https://picsum.photos/1600/900?random=1');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .glider-contain {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glider {
+      display: flex;
+      transition: transform 0.3s ease;
+    }
+
+  </style>
+</head>
+
+<body class="bg-gray-50">
+
+  <!-- Hero-Section -->
+  <section class="hero text-white py-32">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-5xl font-bold mb-6">Willkommen bei unserem Shop</h1>
+      <p class="text-xl mb-8">Entdecken Sie unsere exklusiven Produkte und genießen Sie erstklassigen Service.</p>
+      <a href="#products"
+        class="bg-white text-emerald-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">
+        Jetzt entdecken
+      </a>
+    </div>
+  </section>
+
+  <!-- Produktliste -->
+  <section id="products" class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center mb-12">Unsere Produkte</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Produkt 1 -->
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+        <img src="https://picsum.photos/400/300?random=2" class="w-full h-48 object-cover rounded-lg mb-4 image-zoom"
+          alt="Produkt 1">
+        <h3 class="text-xl font-bold mb-2">Produkt 1</h3>
+        <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="text-2xl font-bold text-emerald-600 mb-4">€ 99.99</div>
+        <button class="bg-emerald-600 text-white px-6 py-2 rounded-full w-full hover:bg-emerald-700 transition">
+          In den Warenkorb
+        </button>
+        <a href="#product-details-1" class="block mt-4 text-center text-emerald-600 hover:text-emerald-700 transition">
+          Details ansehen
+        </a>
+      </div>
+
+      <!-- Produkt 2 -->
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+        <img src="https://picsum.photos/400/300?random=3" class="w-full h-48 object-cover rounded-lg mb-4 image-zoom"
+          alt="Produkt 2">
+        <h3 class="text-xl font-bold mb-2">Produkt 2</h3>
+        <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="text-2xl font-bold text-emerald-600 mb-4">€ 129.99</div>
+        <button class="bg-emerald-600 text-white px-6 py-2 rounded-full w-full hover:bg-emerald-700 transition">
+          In den Warenkorb
+        </button>
+        <a href="#product-details-2" class="block mt-4 text-center text-emerald-600 hover:text-emerald-700 transition">
+          Details ansehen
+        </a>
+      </div>
+
+      <!-- Produkt 3 -->
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+        <img src="https://picsum.photos/400/300?random=4" class="w-full h-48 object-cover rounded-lg mb-4 image-zoom"
+          alt="Produkt 3">
+        <h3 class="text-xl font-bold mb-2">Produkt 3</h3>
+        <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="text-2xl font-bold text-emerald-600 mb-4">€ 149.99</div>
+        <button class="bg-emerald-600 text-white px-6 py-2 rounded-full w-full hover:bg-emerald-700 transition">
+          In den Warenkorb
+        </button>
+        <a href="#product-details-3" class="block mt-4 text-center text-emerald-600 hover:text-emerald-700 transition">
+          Details ansehen
+        </a>
+      </div>
+
+      <!-- Produkt 4 -->
+      <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+        <img src="https://picsum.photos/400/300?random=5" class="w-full h-48 object-cover rounded-lg mb-4 image-zoom"
+          alt="Produkt 4">
+        <h3 class="text-xl font-bold mb-2">Produkt 4</h3>
+        <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="text-2xl font-bold text-emerald-600 mb-4">€ 179.99</div>
+        <button class="bg-emerald-600 text-white px-6 py-2 rounded-full w-full hover:bg-emerald-700 transition">
+          In den Warenkorb
+        </button>
+        <a href="#product-details-4" class="block mt-4 text-center text-emerald-600 hover:text-emerald-700 transition">
+          Details ansehen
+        </a>
+      </div>
+    </div>
+  </section>
+
+<!-- Kundenbewertungen -->
+<section class="bg-white py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Was unsere Kunden sagen</h2>
+    <div class="review-slider">
+      <!-- Bewertung 1 -->
+      <div class="review-card bg-gray-50 p-6 rounded-xl transition mx-4">
+        <div class="flex items-center mb-4">
+          <img src="https://picsum.photos/50/50?random=14" class="rounded-full mr-3">
+          <div>
+            <div class="font-bold">Max Mustermann</div>
+            <div class="text-yellow-400">★★★★★</div>
+          </div>
+        </div>
+        <p class="text-gray-600">"Beste Qualität! Schnelle Lieferung."</p>
+      </div>
+
+      <!-- Bewertung 2 -->
+      <div class="review-card bg-gray-50 p-6 rounded-xl transition mx-4">
+        <div class="flex items-center mb-4">
+          <img src="https://picsum.photos/50/50?random=15" class="rounded-full mr-3">
+          <div>
+            <div class="font-bold">Julia Müller</div>
+            <div class="text-yellow-400">★★★★★</div>
+          </div>
+        </div>
+        <p class="text-gray-600">"Sehr zufrieden mit dem Produkt, Lieferung war rechtzeitig."</p>
+      </div>
+
+      <!-- Bewertung 3 -->
+      <div class="review-card bg-gray-50 p-6 rounded-xl transition mx-4">
+        <div class="flex items-center mb-4">
+          <img src="https://picsum.photos/50/50?random=16" class="rounded-full mr-3">
+          <div>
+            <div class="font-bold">John Doe</div>
+            <div class="text-yellow-400">★★★★☆</div>
+          </div>
+        </div>
+        <p class="text-gray-600">"Gute Qualität, aber die Verpackung war beschädigt."</p>
+      </div>
+
+      <!-- Bewertung 4 -->
+      <div class="review-card bg-gray-50 p-6 rounded-xl transition mx-4">
+        <div class="flex items-center mb-4">
+          <img src="https://picsum.photos/50/50?random=17" class="rounded-full mr-3">
+          <div>
+            <div class="font-bold">Laura Schmidt</div>
+            <div class="text-yellow-400">★★★★★</div>
+          </div>
+        </div>
+        <p class="text-gray-600">"Toller Service und sehr freundliche Kundenbetreuung. Immer wieder gerne!"</p>
+      </div>
+
+      <!-- Bewertung 5 -->
+      <div class="review-card bg-gray-50 p-6 rounded-xl transition mx-4">
+        <div class="flex items-center mb-4">
+          <img src="https://picsum.photos/50/50?random=18" class="rounded-full mr-3">
+          <div>
+            <div class="font-bold">Michael Bauer</div>
+            <div class="text-yellow-400">★★★★★</div>
+          </div>
+        </div>
+        <p class="text-gray-600">"Schnelle Lieferung und top Qualität. Sehr empfehlenswert!"</p>
+      </div>
+
+      <!-- Bewertung 6 -->
+      <div class="review-card bg-gray-50 p-6 rounded-xl transition mx-4">
+        <div class="flex items-center mb-4">
+          <img src="https://picsum.photos/50/50?random=19" class="rounded-full mr-3">
+          <div>
+            <div class="font-bold">Peter Klein</div>
+            <div class="text-yellow-400">★★★★☆</div>
+          </div>
+        </div>
+        <p class="text-gray-600">"Das Produkt ist gut, aber der Versand hat etwas länger gedauert als erwartet."</p>
+      </div>
+
+      <!-- Bewertung 7 -->
+      <div class="review-card bg-gray-50 p-6 rounded-xl transition mx-4">
+        <div class="flex items-center mb-4">
+          <img src="https://picsum.photos/50/50?random=20" class="rounded-full mr-3">
+          <div>
+            <div class="font-bold">Sarah Fischer</div>
+            <div class="text-yellow-400">★★★★★</div>
+          </div>
+        </div>
+        <p class="text-gray-600">"Ich liebe dieses Produkt! Es entspricht genau meinen Erwartungen und funktioniert perfekt."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- FAQ Accordion -->
+  <section class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold text-center mb-12">Häufige Fragen</h2>
+    <div class="max-w-2xl mx-auto">
+      <!-- FAQ 1 -->
+      <div class="accordion-item">
+        <button class="w-full text-left py-4 font-bold flex justify-between items-center">
+          Wie lange dauert die Lieferung?
+          <span class="text-emerald-600">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="pb-4 text-gray-600">Lieferzeiten variieren zwischen 2-5 Werktagen.</p>
+        </div>
+      </div>
+      <!-- Weitere FAQs (insgesamt 12) -->
+      <div class="accordion-item">
+        <button class="w-full text-left py-4 font-bold flex justify-between items-center">
+          Wie kann ich bezahlen?
+          <span class="text-emerald-600">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="pb-4 text-gray-600">Wir akzeptieren alle gängigen Zahlungsmethoden wie Kreditkarte, PayPal und
+            Banküberweisung.</p>
+        </div>
+      </div>
+      <!-- FAQ 2 -->
+      <div class="accordion-item">
+        <button class="w-full text-left py-4 font-bold flex justify-between items-center">
+          Wie kann ich meine Bestellung verfolgen?
+          <span class="text-emerald-600">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="pb-4 text-gray-600">Sie können Ihre Bestellung über den Link in der Bestätigungsmail verfolgen.
+            Einfach den Tracking-Code verwenden, um den Status Ihrer Lieferung einzusehen.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="accordion-item">
+        <button class="w-full text-left py-4 font-bold flex justify-between items-center">
+          Bieten Sie internationalen Versand an?
+          <span class="text-emerald-600">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="pb-4 text-gray-600">Ja, wir bieten internationalen Versand an! Je nach Land können die Versandkosten
+            variieren. Weitere Informationen finden Sie auf unserer Versandseite.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="accordion-item">
+        <button class="w-full text-left py-4 font-bold flex justify-between items-center">
+          Kann ich meine Bestellung nachträglich ändern?
+          <span class="text-emerald-600">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="pb-4 text-gray-600">Bestellungen können nur geändert werden, solange sie sich noch im
+            Bearbeitungsstatus befinden. Bitte kontaktieren Sie uns umgehend, falls Änderungen notwendig sind.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="bg-emerald-100 py-16">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Newsletter abonnieren</h2>
+      <p class="text-gray-600 mb-8">Erhalten Sie exklusive Angebote und Updates</p>
+      <form class="max-w-md mx-auto flex gap-4">
+        <input type="email"
+          class="flex-1 px-4 py-2 rounded-full border focus:outline-none focus:ring-2 focus:ring-emerald-600"
+          placeholder="Ihre E-Mail-Adresse">
+        <button class="bg-emerald-600 text-white px-6 py-2 rounded-full hover:bg-emerald-700 transition">
+          Abonnieren
+        </button>
+      </form>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-emerald-600 text-white py-16">
+    <div class="container mx-auto px-4 text-center">
+      <div class="mb-8">
+        <h3 class="text-2xl font-bold">Kontaktieren Sie uns</h3>
+        <p class="text-gray-200">E-Mail: support@onlineshop.com</p>
+        <p class="text-gray-200">Telefon: +49 123 456 789</p>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-bold">Folge uns</h3>
+        <div class="flex justify-center space-x-6 mt-4">
+          <a href="#" class="text-gray-200 hover:text-white transition">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
+          <a href="#" class="text-gray-200 hover:text-white transition">
+            <i class="fab fa-twitter"></i> Twitter
+          </a>
+          <a href="#" class="text-gray-200 hover:text-white transition">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-500 pt-6">
+        <p class="text-sm text-gray-200">© 2025 E-Commerce Shop. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Accordion Funktion
+    document.querySelectorAll('.accordion-item button').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        content.style.maxHeight =
+          content.style.maxHeight ? null : `${content.scrollHeight}px`;
+      });
+    });
+
+    $(document).ready(function(){
+      $('.review-slider').slick({
+        slidesToShow: 3,         // Anzahl der sichtbaren Bewertungen
+        slidesToScroll: 1,       // Anzahl der Bewertungen, die pro Scroll verschoben werden
+        arrows: false,            // Zeigt die Navigation an
+        dots: false,              // Zeigt die Navigationspunkte an
+        infinite: true,          // Unendliches Scrollen
+        autoplay: true,          // Automatisches Abspielen des Sliders
+        autoplaySpeed: 3000,     // Geschwindigkeit der automatischen Wiedergabe
+        speed: 300,              // Geschwindigkeit des Übergangs
+        
+      });
+    });
+  </script>
+
+</body>
+
+</html>

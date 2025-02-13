@@ -1,0 +1,21 @@
+{
+  "themeName": "Minimal Portfolio",
+  "colors": {
+    "primary": "#4A90E2",
+    "secondary": "#50E3C2",
+    "background": "#F5F7FA",
+    "text": "#333333",
+    "heroOverlay": "#111"
+  },
+  "fonts": {
+    "heading": "'Poppins', sans-serif",
+    "body": "'Roboto', sans-serif"
+  },
+  "images": {
+    "hero": "https://picsum.photos/1920/1080?random=1",
+    "project1": "https://picsum.photos/300/200?random=2",
+    "project2": "https://picsum.photos/300/200?random=3",
+    "project3": "https://picsum.photos/300/200?random=4",
+    "project4": "https://picsum.photos/300/200?random=4"
+  }
+}

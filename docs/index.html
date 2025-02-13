@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landingpage Factory 🚀</title>
+    <meta name="description" content="Entdecke eine Sammlung moderner Webdesign-Projekte und Themes.">
+    <meta name="keywords" content="Webdesign, Themes, Landingpage, Portfolio, E-Commerce">
+    <meta name="author" content="Dein Name">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+            /* Custom Animation */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .loader-circle {
+            width: 5rem;
+            height: 5rem;
+            border: 4px solid #facc15; /* Tailwind yellow-400 */
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 1.2s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+        }
+
+        .loader-text {
+            color: #facc15; /* Tailwind yellow-400 */
+            font-weight: bold;
+            margin-top: 1rem;
+            font-size: 1.25rem;
+            animation: pulse 1.5s ease-in-out infinite;
+            text-shadow: 0 0 10px rgba(250, 204, 21, 0.5); /* Tailwind yellow-400 */
+        }
+
+        .particle-effect {
+            position: absolute;
+            top: 47%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .particle-effect div {
+            position: absolute;
+            border: 2px solid rgba(250, 204, 21, 0.3); /* Tailwind yellow-400 */
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .particle-effect div:nth-child(1) {
+            width: 8rem;
+            height: 8rem;
+        }
+
+        .particle-effect div:nth-child(2) {
+            width: 10rem;
+            height: 10rem;
+            animation-delay: 0.5s;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <div id="pageLoader" class="fixed inset-0 z-[9999] bg-gray-900 flex flex-col items-center justify-center transition-opacity duration-1000">
+        <div class="loader-circle"></div>
+        <div class="loader-text">INITIALISIERE KREATIVITÄT</div>
+        
+        <!-- Cool Particle Effect -->
+        <!-- <div class="particle-effect">
+            <div></div>
+            <div></div>
+        </div> -->
+    </div>
+    
+    <!-- Cool Particle Effect -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div class="w-32 h-32 border-2 border-yellow-400/30 rounded-full absolute animate-pulse"></div>
+            <div class="w-40 h-40 border-2 border-yellow-400/20 rounded-full absolute animate-pulse delay-150"></div>
+        </div>
+    </div>
+</div>
+    <!-- Header -->
+    <header class="bg-gray-900 py-4 shadow-lg text-center fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-white">Landingpage Factory 🚀</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 mx-auto p-8 space-y-8">
+        <section class="mb-12 text-center">
+            <h2 class="text-2xl font-semibold text-gray-200 mb-4">Wähle ein Projekt aus, um zu starten</h2>
+            <p class="text-lg text-gray-400">Klicke auf das Vorschaubild, um mehr Details zu sehen.</p>
+        </section>
+
+        <!-- Projekte - Grid mit Vorschaubildern -->
+        <section id="projects">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                <!-- Projekt 1 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="tech-startup-dark/preview.png" alt="Tech Startup Dark" class="w-full h-60 object-cover transform transition-all duration-300 group-hover:scale-110">
+                    <div class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h4 class="text-2xl font-bold text-white">Tech Startup Dark</h4>
+                    </div>
+                    <a href="tech-startup-dark/index.html" target="_blank" class="absolute top-0 left-0 right-0 bottom-0"></a>
+                </div>
+                <!-- Projekt 2 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="tech-startup-light/preview.png" alt="Tech Startup Dark" class="w-full h-60 object-cover transform transition-all duration-300 group-hover:scale-110">
+                    <div class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h4 class="text-2xl font-bold text-white">Tech Startup Light</h4>
+                    </div>
+                    <a href="tech-startup-light/index.html" target="_blank" class="absolute top-0 left-0 right-0 bottom-0"></a>
+                </div>
+                <!-- Projekt 3 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="agency-dark/preview.png" alt="Tech Startup Dark" class="w-full h-60 object-cover transform transition-all duration-300 group-hover:scale-110">
+                    <div class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h4 class="text-2xl font-bold text-white">Angry Dark</h4>
+                    </div>
+                    <a href="agency-dark/index.html" target="_blank" class="absolute top-0 left-0 right-0 bottom-0"></a>
+                </div>
+                <!-- Projekt 4 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="creative-studio/preview.png" alt="Tech Startup Dark" class="w-full h-60 object-cover transform transition-all duration-300 group-hover:scale-110">
+                    <div class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h4 class="text-2xl font-bold text-white">Creative Studio</h4>
+                    </div>
+                    <a href="creative-studio/index.html" target="_blank" class="absolute top-0 left-0 right-0 bottom-0"></a>
+                </div>
+                <!-- Projekt 5 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="ecommerce/preview.png" alt="Tech Startup Dark" class="w-full h-60 object-cover transform transition-all duration-300 group-hover:scale-110">
+                    <div class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h4 class="text-2xl font-bold text-white">Creative Studio</h4>
+                    </div>
+                    <a href="ecommerce/index.html" target="_blank" class="absolute top-0 left-0 right-0 bottom-0"></a>
+                </div>
+                <!-- Projekt 5 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                    <img src="minimalist-portfolio/preview.png" alt="Tech Startup Dark" class="w-full h-60 object-cover transform transition-all duration-300 group-hover:scale-110">
+                    <div class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h4 class="text-2xl font-bold text-white">Creative Studio</h4>
+                    </div>
+                    <a href="minimalist-portfolio/index.html" target="_blank" class="absolute top-0 left-0 right-0 bottom-0"></a>
+                </div>
+                <!-- Weitere Projekte ähnlich gestalten -->
+            </div>
+        </section>
+
+        <!-- Call-to-Action -->
+        <section class="bg-gradient-to-r from-yellow-300 to-red-500 py-12 mt-16 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Bereit, dein nächstes Projekt zu starten?</h2>
+            <p class="text-gray-200 mb-6">Entdecke alle verfügbaren Themes und finde das perfekte Design für deine Bedürfnisse.</p>
+            <a href="#projects" class="bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-300">Jetzt entdecken</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-8 mt-16">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-400">&copy; 2025 Dein Name | Alle Rechte vorbehalten</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white">Twitter</a>
+                <a href="#" class="text-gray-400 hover:text-white">LinkedIn</a>
+                <a href="https://github.com/akocerke" target="_blank" class="text-gray-400 hover:text-white">GitHub</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Page Loader entfernen nach 3 Sekunden
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('pageLoader');
+            setTimeout(() => {
+                loader.classList.add('opacity-0');
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 1000); // Verzögerung für das Ausblenden
+            }, 2500); // 3 Sekunden Ladezeit
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{
+    "themeName": "Agency Dark",
+    "description": "Ein modernes, dunkles Design für Agenturen mit Team-Grid, Statistik-Counter und Zitat-Slider.",
+    "styles": {
+      "primaryColor": "#1abc9c", 
+      "secondaryColor": "#e74c3c", 
+      "accentColor": "#f39c12", 
+      "fontFamily": "Arial, sans-serif", 
+      "textColor": "#ecf0f1", 
+      "backgroundColor": "#2c3e50", 
+      "neonGreen": "#00ffcc", 
+      "neonPurple": "#9b59b6"
+    },
+    "images": {
+      "teamMember1": "https://picsum.photos/1920/1080?random=1",
+      "teamMember2": "https://picsum.photos/1920/1080?random=2",
+      "teamMember3": "https://picsum.photos/1920/1080?random=3"
+    }
+  }
+  

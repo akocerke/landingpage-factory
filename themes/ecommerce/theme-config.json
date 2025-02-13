@@ -1,0 +1,40 @@
+{
+  "name": "E-Commerce Shop",
+  "colors": {
+    "primary": "#059669",
+    "secondary": "#065f46",
+    "accent": "#d1fae5"
+  },
+  "imageTags": ["ecommerce", "products", "shopping"],
+  "images": {
+    "hero": "https://picsum.photos/1600/900?random=1",
+    "products": [
+      "https://picsum.photos/400/300?random=2",
+      "https://picsum.photos/400/300?random=3",
+      "https://picsum.photos/400/300?random=4",
+      "https://picsum.photos/400/300?random=5",
+      "https://picsum.photos/400/300?random=6",
+      "https://picsum.photos/400/300?random=7",
+      "https://picsum.photos/400/300?random=8",
+      "https://picsum.photos/400/300?random=9",
+      "https://picsum.photos/400/300?random=10",
+      "https://picsum.photos/400/300?random=11",
+      "https://picsum.photos/400/300?random=12",
+      "https://picsum.photos/400/300?random=13"
+    ],
+    "reviews": [
+      "https://picsum.photos/50/50?random=14",
+      "https://picsum.photos/50/50?random=15",
+      "https://picsum.photos/50/50?random=16",
+      "https://picsum.photos/50/50?random=17",
+      "https://picsum.photos/50/50?random=18",
+      "https://picsum.photos/50/50?random=19",
+      "https://picsum.photos/50/50?random=20",
+      "https://picsum.photos/50/50?random=21",
+      "https://picsum.photos/50/50?random=22",
+      "https://picsum.photos/50/50?random=23",
+      "https://picsum.photos/50/50?random=24",
+      "https://picsum.photos/50/50?random=25"
+    ]
+  }
+}

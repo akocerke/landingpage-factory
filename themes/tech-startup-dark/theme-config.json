@@ -1,0 +1,14 @@
+{
+  "name": "Tech Startup Dark",
+  "colors": {
+    "primary": "#2563eb",
+    "secondary": "#4f46e5"
+  },
+  "imageTags": ["tech", "startup", "ai"],
+  "images": {
+    "hero": "https://picsum.photos/600/400?random=1",
+    "feature1": "https://picsum.photos/500/300?random=2",
+    "feature2": "https://picsum.photos/500/300?random=3",
+    "feature3": "https://picsum.photos/500/300?random=4"
+  }
+}

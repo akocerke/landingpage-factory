@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Startup Dark</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS (Animate on Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --neon-cyan: #00f3ff;
+            --neon-purple: #bc13fe;
+            --dark-bg: #0a0a0f;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--dark-bg);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Dynamic Navbar */
+        .navbar {
+            background: rgba(10, 10, 15, 0.95) !important;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.1);
+            transform: translateY(-100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar.active {
+            transform: translateY(0);
+        }
+
+        .nav-link {
+            position: relative;
+            color: white !important;
+            margin: 0 15px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-cyan);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(45deg, var(--neon-purple), var(--neon-cyan));
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .hero .btn {
+            font-size: 1.25rem;
+            padding: 12px 40px;
+            border-radius: 30px;
+            background: var(--neon-cyan);
+            color: var(--dark-bg);
+            border: none;
+            transition: background 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background: var(--neon-purple);
+            color: white;
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 40px rgba(0, 243, 255, 0.2);
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            color: var(--neon-cyan);
+            margin-bottom: 20px;
+        }
+
+        /* Pricing Section */
+        .pricing-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 40px rgba(0, 243, 255, 0.2);
+        }
+
+        .pricing-card h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--neon-cyan);
+        }
+
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            padding: 50px;
+        }
+
+        .contact-section .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .contact-section .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-section .btn {
+            background: var(--neon-cyan);
+            color: var(--dark-bg);
+            font-weight: 600;
+            border-radius: 10px;
+            padding: 12px 30px;
+        }
+        .map-container iframe {
+            border-radius: 15px !important;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15) !important;
+        }
+        /* Scroll-to-Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--neon-cyan);
+            color: var(--dark-bg);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+            transition: background 0.3s ease;
+        }
+
+        .scroll-top:hover {
+            background: var(--neon-purple);
+        }
+        .footer-section{
+            border-top: 1px solid rgba(0, 243, 255, 0.2) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dynamic Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span style="color: var(--neon-cyan)">NextGen</span>TECH
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>NextGen Tech</h1>
+            <p>Next-generation quantum computing solutions</p>
+            <a href="#features" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Features</h2>
+            <div class="row">
+                <div class="col-md-4 p-2" data-aos="fade-up">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI Integration</h3>
+                        <p>Seamlessly integrate AI into your workflow.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 p-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Cloud Solutions</h3>
+                        <p>Leverage the power of the cloud.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 p-2" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-card text-center">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Data Analytics</h3>
+                        <p>Utilize advanced analytics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Pricing</h2>
+            <div class="row">
+                <div class="col-md-4 p-2" data-aos="fade-up">
+                    <div class="pricing-card text-center">
+                        <h3>Basic</h3>
+                        <p class="price">$29<span>/month</span></p>
+                        <ul class="list-unstyled">
+                            <li>1 Project</li>
+                            <li>Basic Support</li>
+                            <li>5GB Storage</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+                <div class="col-md-4 p-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pricing-card text-center">
+                        <h3>Pro</h3>
+                        <p class="price">$99<span>/month</span></p>
+                        <ul class="list-unstyled">
+                            <li>5 Projects</li>
+                            <li>Priority Support</li>
+                            <li>50GB Storage</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+                <div class="col-md-4 p-2" data-aos="fade-up" data-aos-delay="400">
+                    <div class="pricing-card text-center">
+                        <h3>Enterprise</h3>
+                        <p class="price">$199<span>/month</span></p>
+                        <ul class="list-unstyled">
+                            <li>Unlimited Projects</li>
+                            <li>24/7 Support</li>
+                            <li>500GB Storage</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Contact Us</h2>
+            <div class="row mb-4">
+                <div class="col-md-6 mb-5">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                        </div>
+                        <div class=" justify-content-center">
+                            <button type="submit" class="btn">Send Message</button>
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d144.9537353153166!3d-37.81627974202105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d2aabc5e2f1a!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1676293236705!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll-to-Top Button -->
+    <button class="scroll-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 text-center footer-section">
+        <p>&copy; 2025 Tech Startup. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init();
+
+        // Navbar Scroll Logic
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const navbar = document.querySelector('.navbar');
+            
+            if (currentScroll > 100 && currentScroll > lastScroll) {
+                navbar.classList.add('active');
+            } else {
+                navbar.classList.remove('active');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Scroll-to-Top Function
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

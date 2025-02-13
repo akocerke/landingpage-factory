@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4A90E2;
+            --secondary: #50E3C2;
+            --background: #F5F7FA;
+            --text: #333333;
+            --hero-overlay: rgba(17, 17, 17, 0.8);
+        }
+
+        .dark {
+            --primary: #6AA8FF;
+            --secondary: #70FFE0;
+            --background: #1A1A1A;
+            --text: #F5F7FA;
+            --hero-overlay: rgba(0, 0, 0, 0.7);
+        }
+
+         /* Define the animation for skill bars */
+    @keyframes skillAnimation {
+      0% {
+          width: 0%;
+      }
+      100% {
+          width: inherit;
+      }
+  }
+
+  /* Apply animation to all skill bars */
+  .skill-bar {
+      transition: width 1s ease-in-out;
+  }
+
+  /* Set the width for each skill */
+  .html-bar {
+      width: 90%;
+  }
+
+  .react-bar {
+      width: 75%;
+  }
+
+  .tailwind-bar {
+      width: 85%;
+  }
+
+  .node-bar {
+      width: 80%;
+  }
+
+  .mongodb-bar {
+      width: 70%;
+  }
+    </style>
+</head>
+<body class="bg-[var(--background)] text-[var(--text)] transition-all duration-500">
+<!-- Theme Toggle Checkbox -->
+<div class="fixed top-5 right-5 p-2 z-40">
+  <label for="themeCheckbox" class="flex items-center justify-center cursor-pointer w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-800 shadow-md">
+      <!-- Mond-Icon für Dark Mode, versteckt im Light Mode -->
+      <i class="fas fa-moon text-gray-600 dark:text-gray-400 dark:inline-block hidden text-xl"></i>
+      <!-- Checkbox Input (hidden) -->
+      <input type="checkbox" id="themeCheckbox" class="hidden" />
+      <!-- Sonnen-Icon für Light Mode, versteckt im Dark Mode -->
+      <i class="fas fa-sun text-yellow-500 dark:text-gray-600 inline-block dark:hidden text-xl"></i>
+  </label>
+</div>
+
+    <!-- Hero Section -->
+    <section class="hero relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://picsum.photos/1920/1080?random=1');">
+        <div class="absolute inset-0 bg-[var(--hero-overlay)]"></div>
+        <div class="relative text-center text-white">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Creative Developer</h1>
+            <p class="text-xl md:text-2xl max-w-2xl mx-auto">Building digital experiences that matter</p>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+<section class="py-16 px-4 md:px-8 bg-white dark:bg-gray-900">
+  <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl hover:cursor-pointer">
+              <img src="https://picsum.photos/250/150?random=2" class="w-full rounded-lg mb-3" alt="Project 1">
+              <h3 class="text-lg font-bold">Project 1</h3>
+              <p class="text-gray-600 dark:text-gray-300">A cutting-edge e-commerce platform for modern businesses.</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl hover:cursor-pointer">
+              <img src="https://picsum.photos/250/150?random=3" class="w-full rounded-lg mb-3" alt="Project 2">
+              <h3 class="text-lg font-bold">Project 2</h3>
+              <p class="text-gray-600 dark:text-gray-300">A sleek and user-friendly mobile banking application.</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl hover:cursor-pointer">
+              <img src="https://picsum.photos/250/150?random=4" class="w-full rounded-lg mb-3" alt="Project 3">
+              <h3 class="text-lg font-bold">Project 3</h3>
+              <p class="text-gray-600 dark:text-gray-300">A smart home automation system with AI integration.</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md transform transition duration-300 hover:scale-105 hover:shadow-xl hover:cursor-pointer">
+              <img src="https://picsum.photos/250/150?random=5" class="w-full rounded-lg mb-3" alt="Project 4">
+              <h3 class="text-lg font-bold">Project 4</h3>
+              <p class="text-gray-600 dark:text-gray-300">A next-gen cloud storage service with end-to-end encryption.</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section class="py-20 px-4 md:px-8 bg-gray-100 dark:bg-gray-800" id="skillsSection">
+  <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-12 text-center text-gray-800 dark:text-white">Skills</h2>
+      <div class="space-y-6">
+          <!-- HTML Skill -->
+          <div class="flex flex-col space-y-2">
+              <div class="flex justify-between">
+                  <span>HTML</span>
+                  <span>90%</span>
+              </div>
+              <div class="w-full h-3 bg-gray-300 dark:bg-gray-700 rounded-full overflow-hidden">
+                  <div class="h-full bg-red-500 w-0 skill-bar"></div>
+              </div>
+          </div>
+          <!-- React Skill -->
+          <div class="flex flex-col space-y-2">
+              <div class="flex justify-between">
+                  <span>REACT</span>
+                  <span>75%</span>
+              </div>
+              <div class="w-full h-3 bg-gray-300 dark:bg-gray-700 rounded-full overflow-hidden">
+                  <div class="h-full bg-blue-500 w-0 skill-bar"></div>
+              </div>
+          </div>
+          <!-- Tailwind CSS Skill -->
+          <div class="flex flex-col space-y-2">
+              <div class="flex justify-between">
+                  <span>Tailwind CSS</span>
+                  <span>85%</span>
+              </div>
+              <div class="w-full h-3 bg-gray-300 dark:bg-gray-700 rounded-full overflow-hidden">
+                  <div class="h-full bg-teal-500 w-0 skill-bar"></div>
+              </div>
+          </div>
+          <!-- Node.js Skill -->
+          <div class="flex flex-col space-y-2">
+              <div class="flex justify-between">
+                  <span>Node.js</span>
+                  <span>80%</span>
+              </div>
+              <div class="w-full h-3 bg-gray-300 dark:bg-gray-700 rounded-full overflow-hidden">
+                  <div class="h-full bg-green-500 w-0 skill-bar"></div>
+              </div>
+          </div>
+          <!-- MySQL Skill -->
+          <div class="flex flex-col space-y-2">
+              <div class="flex justify-between">
+                  <span>MySQL</span>
+                  <span>70%</span>
+              </div>
+              <div class="w-full h-3 bg-gray-300 dark:bg-gray-700 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 w-0 skill-bar"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+    <script>
+      // Theme Toggle Logic
+      const themeCheckbox = document.getElementById('themeCheckbox');
+      const body = document.body;
+  
+      // Set initial theme based on localStorage or system theme
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          themeCheckbox.checked = true;
+          body.classList.add('dark');
+      }
+  
+      // Listen for checkbox toggle
+      themeCheckbox.addEventListener('change', () => {
+          if (themeCheckbox.checked) {
+              body.classList.add('dark');
+              localStorage.setItem('theme', 'dark');
+          } else {
+              body.classList.remove('dark');
+              localStorage.setItem('theme', 'light');
+          }
+      });
+
+
+      const skillSection = document.getElementById('skillsSection');
+    const skillBars = document.querySelectorAll('.skill-bar');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add class to trigger the animation when the section is in view
+                skillBars.forEach((bar, index) => {
+                    bar.style.width = `${[90, 75, 85, 80, 70][index]}%`;
+                });
+                observer.disconnect(); // Disconnect after triggering the animation
+            }
+        });
+    }, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+
+    observer.observe(skillSection);
+  </script>
+</body>
+</html>
