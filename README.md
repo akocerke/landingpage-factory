@@ -47,7 +47,7 @@ Besuche die [Live Demo](https://akocerke.github.io/landingpage-factory/) auf Git
 ## Installation
 1. Klone das Repository:
    ```bash
-   git clone https://github.com/dein-benutzername/landingpage-factory.git
+   git clone https://github.com/akocerke/landingpage-factory.git
    ```
 2. Installiere die Abhängigkeiten:
    ```bash
@@ -55,7 +55,7 @@ Besuche die [Live Demo](https://akocerke.github.io/landingpage-factory/) auf Git
    ```
 3. Starte das Build-System:
    ```bash
-   gulp
+   npx gulp
    ```
 ## Lizenz
 Dieses Projekt ist unter der MIT-Lizenz lizenziert. Weitere Informationen findest du in der [LICENSE](LICENSE)-Datei.
