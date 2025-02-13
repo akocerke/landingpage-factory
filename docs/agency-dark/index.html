@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de" class="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +14,11 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
   <!-- Slick Carousel CSS -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-  
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
@@ -28,31 +31,42 @@
       cursor: default;
     }
 
-    button, a, .btn, .btn:hover {
+    button,
+    a,
+    .btn,
+    .btn:hover {
       cursor: pointer;
     }
 
-/* Augenfriedlicher Neon-Effekt in Gelb */
-.neon-text {
-  color: #f39c12;  /* Gelb */
-  text-shadow: 
-    0 0 5px rgba(243, 156, 18, 0.5),  /* Sehr subtiler Glow */
-    0 0 10px rgba(243, 156, 18, 0.3);  /* Noch schwächerer Glow */
-  font-weight: bold;  /* Fetter Text für bessere Lesbarkeit */
-}
+    /* Augenfriedlicher Neon-Effekt in Gelb */
+    .neon-text {
+      color: #f39c12;
+      /* Gelb */
+      text-shadow:
+        0 0 5px rgba(243, 156, 18, 0.5),
+        /* Sehr subtiler Glow */
+        0 0 10px rgba(243, 156, 18, 0.3);
+      /* Noch schwächerer Glow */
+      font-weight: bold;
+      /* Fetter Text für bessere Lesbarkeit */
+    }
 
     /* Subtiler Neon Hover-Effekt für Buttons in Gelb */
     .neon-btn {
-      background: #f39c12;  /* Gelb */
-      border: 2px solid #f39c12;  /* Gelb border */
+      background: #f39c12;
+      /* Gelb */
+      border: 2px solid #f39c12;
+      /* Gelb border */
       color: white;
       transition: all 0.3s ease;
     }
 
     .neon-btn:hover {
       background: transparent;
-      color: #f39c12 !important;  /* Gelb Text bei Hover */
-      box-shadow: 0 0 4px #f39c12;  /* Sehr schwacher Glow bei Hover */
+      color: #f39c12 !important;
+      /* Gelb Text bei Hover */
+      box-shadow: 0 0 4px #f39c12;
+      /* Sehr schwacher Glow bei Hover */
     }
 
     /* Animated Image Hover Effect */
@@ -83,8 +97,10 @@
     <div class="absolute inset-0 bg-black bg-opacity-60"></div>
     <div class="absolute inset-0 flex flex-col justify-center items-center text-center">
       <h1 class="text-5xl font-bold mb-4 neon-text" data-aos="fade-up">Willkommen bei Agency Dark</h1>
-      <p class="text-lg mb-6 neon-text" data-aos="fade-up" data-aos-delay="200">Professionelle Dienstleistungen für moderne Marken</p>
-      <a href="#team" class="neon-btn px-6 py-3 border text-white hover:text-black transition duration-300" data-aos="fade-up" data-aos-delay="400">
+      <p class="text-lg mb-6 neon-text" data-aos="fade-up" data-aos-delay="200">Professionelle Dienstleistungen für
+        moderne Marken</p>
+      <a href="#team" class="neon-btn px-6 py-3 border text-white hover:text-black transition duration-300"
+        data-aos="fade-up" data-aos-delay="400">
         Mehr erfahren
       </a>
     </div>
@@ -95,7 +111,8 @@
     <div class="max-w-7xl mx-auto text-center">
       <h2 class="text-4xl font-semibold mb-12 neon-text" data-aos="fade-up">Unser Team</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10" data-aos="fade-up" data-aos-delay="200">
-        <div class="team-member bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:scale-105">
+        <div
+          class="team-member bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:scale-105">
           <img src="https://picsum.photos/200?random=1" alt="Team Member 1" class="w-32 h-32 rounded-full mx-auto mb-4">
           <h3 class="text-xl text-white mb-2">John Doe</h3>
           <p class="text-gray-400">CEO</p>
@@ -104,7 +121,8 @@
             <a href="#" class="text-gray-300 hover:text-accentColor"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
-        <div class="team-member bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:scale-105">
+        <div
+          class="team-member bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:scale-105">
           <img src="https://picsum.photos/200?random=2" alt="Team Member 2" class="w-32 h-32 rounded-full mx-auto mb-4">
           <h3 class="text-xl text-white mb-2">Jane Smith</h3>
           <p class="text-gray-400">Designer</p>
@@ -113,7 +131,8 @@
             <a href="#" class="text-gray-300 hover:text-accentColor"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
-        <div class="team-member bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:scale-105">
+        <div
+          class="team-member bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow transform hover:scale-105">
           <img src="https://picsum.photos/200?random=3" alt="Team Member 3" class="w-32 h-32 rounded-full mx-auto mb-4">
           <h3 class="text-xl text-white mb-2">Sam Lee</h3>
           <p class="text-gray-400">Developer</p>
@@ -153,7 +172,8 @@
       <h2 class="text-4xl font-semibold mb-8 neon-text">Kundenbewertungen</h2>
       <div class="quote-slider space-y-6">
         <div class="quote text-lg">
-          <p>"Die Zusammenarbeit mit diesem Team war außergewöhnlich! Sie haben unsere Erwartungen übertroffen." - Kunde A</p>
+          <p>"Die Zusammenarbeit mit diesem Team war außergewöhnlich! Sie haben unsere Erwartungen übertroffen." - Kunde
+            A</p>
         </div>
         <div class="quote text-lg">
           <p>"Die besten Designer, mit denen ich je zusammengearbeitet habe!" - Kunde B</p>
@@ -166,8 +186,11 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-4 text-center bg-gray-900 text-gray-400">
-    <p>&copy; 2025 Agency Dark. Alle Rechte vorbehalten.</p>
+  <footer class="py-4 text-center bg-gray-900 text-gray-400 border-t border-yellow-700">
+    <p>&copy; 2025 Landingpage Factory 🚀 All Rights Reserved. | 
+      <a href="https://github.com/akocerke" target="_blank" rel="noopener noreferrer" class="hover:text-gray-200">
+          View on GitHub
+      </a></p>
   </footer>
 
   <!-- AOS Animation & Custom Cursor Script -->
@@ -176,7 +199,7 @@
     AOS.init();
 
     // Slick Carousel Initialization
-    $(document).ready(function(){
+    $(document).ready(function () {
       $('.quote-slider').slick({
         autoplay: true,
         autoplaySpeed: 2000,
@@ -187,4 +210,5 @@
   </script>
 
 </body>
+
 </html>
